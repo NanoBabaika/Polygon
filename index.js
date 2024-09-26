@@ -2,13 +2,13 @@ const head_container = document.getElementById('h_container');
 head_container.style.border = '1px solid purple';
 const taskList = document.getElementById('list')
 taskList.style.border = '1px solid purple';
-
+console.log(taskList);
 let input = document.querySelector('input');
 const addBtn = document.getElementById('add');
 
 
 function createNewTask() {
-    const newElem = document.createElement('li');
+    const newElem = document.createElement('div');
     newElem.classList.add('new__task');
     taskList.prepend(newElem);
     console.log(newElem);
