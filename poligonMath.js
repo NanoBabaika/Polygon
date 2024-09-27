@@ -36,8 +36,4 @@ function showAllElem(comingValue) {
 }
 
  
-let aVariable = 15;
-
-let bVariable = 5;
-
-console.log(aVariable > bVariable);
+ 

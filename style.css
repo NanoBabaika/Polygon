@@ -32,6 +32,7 @@ body {
     cursor: pointer;
     border-radius: 8px;
     border: 1px solid transparent;
+    color: #fff;
 }
 
 .count__btn-minus {
@@ -50,4 +51,89 @@ body {
 
 .count__btn-plus:hover {
     background-color: rgb(0, 255, 0);
+}
+
+
+/* Modal */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal__container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 350px;
+    min-width: 350px;
+    border: 1px solid rebeccapurple;
+    background: blanchedalmond;
+    margin-bottom: 100px;
+}
+
+.modal__btn {
+    margin-top: 150px;
+    height: 50px;
+    width: 120px;
+    border: 1px solid blue;
+    border-radius: 6px;
+    cursor: pointer;
+    background: purple;
+    color: #fff;
+}
+
+.modal__btn:hover {
+    background: rgb(131, 112, 131);
+    transition: .5s;
+}
+
+.banner {
+    display: none;
+    position: relative;
+    left: 0%;
+    top: -495px;
+    border: 1px solid black;
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.banner--active {
+    display: block;
+}
+
+.banner__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.banner__title {
+    text-align: center;
+     font-size: 28px;
+}
+
+.banner__img {
+    
+  width: 200px;
+  height: 200px;  
+}
+
+.close__btn {
+    margin-top: 20px;
+    height: 50px;
+    cursor: pointer;
+    background: blanchedalmond;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+
+.close__btn:hover {
+    background: rgb(219, 146, 36);
+    transition: .5s;
 }
