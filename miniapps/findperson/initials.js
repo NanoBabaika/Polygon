@@ -49,7 +49,7 @@ let colleagues = [
 ];
  
 // Функция для поиска нужной информации
-function findPerson( findOption, wantedPerson, personArray = colleagues,) {
+function findPerson(findOption,  wantedPerson,   personArray = colleagues,) {
     let len = personArray.length;
     let findedItem = {}
 
@@ -71,16 +71,30 @@ function findPerson( findOption, wantedPerson, personArray = colleagues,) {
 
 }
 
-
-findPerson( 'lastname', 'Kozlova');
-
+ 
 // Присвоить переменную инпут и получить введенное пользователем значение
 
-let input = document.getElementById('findInput');
+// Определили кнопку
 let searchBtn = document.getElementById('findBtn');
 
+// Вещаем обработчик события
+searchBtn.addEventListener('click', getValue);
 
 
+// Получаем значение из инпута
+function getValue() {
+  let valueInput = document.getElementById('findInput').value;
+  let searchValue = valueInput.split(' ');
+  let searchParameter=searchValue[0];
+  let seachInfo=searchValue[1];
+ 
+  if(searchValue.length === 2) {
+    findPerson(searchParameter, seachInfo);
+   } else {
+    console.log('Слишком много данных');
+  }
+}
+ 
 
 
 
