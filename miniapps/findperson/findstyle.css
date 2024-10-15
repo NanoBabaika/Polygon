@@ -1,0 +1,40 @@
+
+
+.container {
+    margin: 0 auto;
+    width: 600px;
+    height: 300px;
+    background: blue;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper__find {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.findInput {
+    width: 300px;
+    height: 30px;
+    border-radius: 6px;
+}
+
+.findBtn {
+    width: 250px;
+    margin-left: 25px;
+    height: 35px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+
+.findBtn:hover {
+    background: rgb(1, 159, 250);
+    color: #fff;
+    transition: .5s;
+}
