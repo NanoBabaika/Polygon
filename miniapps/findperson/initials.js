@@ -29,8 +29,7 @@ function initials (person) {
     return resultInitials;
 }
 
-
-// Написать функцию которая будет принимать массив объектов и будет выводить список сотрудников и инцициаалми.
+// Типа база данных, потом нужно будет вывести в отдельный файл
 let colleagues = [
     {
         name: 'Ksenia',
@@ -49,23 +48,86 @@ let colleagues = [
     },
 ];
  
-
+// Функция для поиска нужной информации
 function findPerson( findOption, wantedPerson, personArray = colleagues,) {
-    let resultArray = [];
     let len = personArray.length;
+    let findedItem = {}
 
-    for(let i = 0;  i < len; i++) {
-        if(personArray[i][findOption] === wantedPerson){
-            resultArray.push(personArray[i]);
+    for(let index = 0;  index < len; index++) {
+        if(personArray[index][findOption] === wantedPerson){
+            let findedItem  = personArray[index];
+            let {name, fathername, lastname} = findedItem;
+            let resultInfo = `Данные сотрудника найдены: ${name} ${fathername} ${lastname}`
+            console.log(resultInfo);
+            return resultInfo;
+        } else {
+            findedItem = ''
         }
     }
 
-    if (resultArray.length === 0) {
-        console.log('Неудалось найти нужного сотрудника')
-    } else {
-        console.log(resultArray);
+    if(findedItem === '') {
+        console.log('Сотрудник не найден проверьте данные....')
     }
+
 }
 
 
 findPerson( 'lastname', 'Kozlova');
+
+// Присвоить переменную инпут и получить введенное пользователем значение
+
+let input = document.getElementById('findInput');
+let searchBtn = document.getElementById('findBtn');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log('Результат такой. Проверь что сможешь улучшить')
