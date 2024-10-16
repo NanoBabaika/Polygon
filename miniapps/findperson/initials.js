@@ -62,8 +62,8 @@ function findPerson(findOption,  wantedPerson,   personArray = colleagues,) {
         }
     
     // После чего объединяем элементы массива в строку и выводим ее содержимое в текстконтент
-        let resultInfoText = resultInfo.join(',    ');
-        textArea.innerHTML = `Результат поиска :${resultInfoText},`;
+        let resultInfoText = resultInfo.join('.    ');
+        textArea.innerHTML = `Результат поиска:  ${resultInfoText}.`;
     }
          
 }
