@@ -1,86 +1,75 @@
+// import {colleagues} from "./data.js";
 console.log('Привет, кожанный! |_{^_^}_| Давай проверим твой код на работоспособность');
  
-let sotrunnik1 = {
-    name: 'Ksenia',
-    fathername:'Viktorovna' ,
-    lastname: 'Kolesnikova',
-};
-
-let sotrunnik2 =  {
-    name: 'Vladislava',
-    fathername: 'Sergeevna' ,
-    lastname: 'Ivanova',
-}
-
-
-function initials (person) {
-    // Находим элементы массива и получаем к ним доступ
-    let keyName ='name';
-    let keyFathername = 'fathername'; 
-    let Family = person.lastname;
-
-    // обращаемся И и О обрезаем лишнее и оставляем только 1й символ
-    let initialsName = person[keyName].charAt(0);
-    let initialFathername = person[keyFathername].charAt(0);
-     
-    // Возвращаем результат в виде строки и выводим в консоль
-    let resultInitials =`Сотрудник ${Family} ${initialsName}.${initialFathername}.`;
-    console.log( resultInitials);
-    return resultInitials;
-}
-
 // Типа база данных, потом нужно будет вывести в отдельный файл
 let colleagues = [
     {
-        name: 'Ksenia',
-        fathername:'Viktorovna' ,
-        lastname: 'Kolesnikova',
+        name: 'Ксения',
+        fathername:'Викторовна' ,
+        lastname: 'Иванченко',
     },
     {
-        name:' Vladislava',
-        fathername: 'Sergeevna' ,
-        lastname: 'Ivanova',
+        name: 'Ольга',
+        fathername:'Олеговна' ,
+        lastname: 'Чердынцева',
     },
     {
-        name: 'Irina',
-        fathername:'Olegovna' ,
-        lastname: 'Kozlova',
+        name:' Владислава',
+        fathername: 'Сергеевна' ,
+        lastname: 'Иванова',
     },
+    {
+        name: 'Ксения',
+        fathername:'Николаевна' ,
+        lastname: 'Сыромятова',
+    },
+    
 ];
+
  
+
+let searchBtn = document.getElementById('findBtn');
+let textArea = document.getElementById('text');// Вещаем обработчик события
+searchBtn.addEventListener('click', getValue);
+const reload = () =>  window.location.reload();
+
+
 // Функция для поиска нужной информации
+  
 function findPerson(findOption,  wantedPerson,   personArray = colleagues,) {
     let len = personArray.length;
-    let findedItem = {}
+    let findedItems = [];
 
     for(let index = 0;  index < len; index++) {
         if(personArray[index][findOption] === wantedPerson){
             let findedItem  = personArray[index];
-            let {name, fathername, lastname} = findedItem;
-            let resultInfo = `Данные сотрудника найдены: ${name} ${fathername} ${lastname}`
-            console.log(resultInfo);
-            return resultInfo;
-        } else {
-            findedItem = ''
+            findedItems.push(findedItem);
+        } 
+     }  
+
+    if (findedItems.length === 0) {
+        let noData = 'Сотрудник не найден проверьте данные....';
+        textArea.innerHTML = noData;
+        setInterval(reload,  3000);
+        
+    }else{
+        let resultInfo = [];
+    //  Нужен цикл что бы пройтись по массиву. Деструктуризировать каждый объект и передать его в массив
+        for (let person of findedItems) {
+            let {name, fathername, lastname} = person;
+            let personInfo = ` ${name} ${fathername} ${lastname}`;
+            resultInfo.push(personInfo);
         }
+    
+    // После чего объединяем элементы массива в строку и выводим ее содержимое в текстконтент
+        let resultInfoText = resultInfo.join(',    ');
+        textArea.innerHTML = `Результат поиска :${resultInfoText},`;
     }
-
-    if(findedItem === '') {
-        console.log('Сотрудник не найден проверьте данные....')
-    }
-
+         
 }
-
  
 // Присвоить переменную инпут и получить введенное пользователем значение
-
-// Определили кнопку
-let searchBtn = document.getElementById('findBtn');
-
-// Вещаем обработчик события
-searchBtn.addEventListener('click', getValue);
-
-
+// Определили кнопку 
 // Получаем значение из инпута
 function getValue() {
   let valueInput = document.getElementById('findInput').value;
@@ -91,10 +80,18 @@ function getValue() {
   if(searchValue.length === 2) {
     findPerson(searchParameter, seachInfo);
    } else {
-    console.log('Слишком много данных');
+    let moreData = 'Некорретный запрос. Поиск выполняется по двум параметрам';
+    textArea.innerHTML = moreData;
+    setInterval(reload,  3000);
   }
 }
  
+ 
+ 
+
+ 
+
+console.log(' Проверь что можно улучшить и не повторяй себя');
 
 
 
@@ -108,40 +105,26 @@ function getValue() {
 
 
 
+// function findPerson(findOption,  wantedPerson,   personArray = colleagues,) {
+//     let len = personArray.length;
+//     let findedItem = {}
 
+//     for(let index = 0;  index < len; index++) {
+//         if(personArray[index][findOption] === wantedPerson){
+//             let findedItem  = personArray[index];
+//             let {name, fathername, lastname} = findedItem;
+//             let resultInfo = `Данные сотрудника найдены: ${name} ${fathername} ${lastname}`
+//             textArea.innerHTML = resultInfo;
+//             return resultInfo;
+//         } else {
+//             findedItem = ''
+//         }
+//     }
 
+//     if(findedItem === '') {
+//         let noData = 'Сотрудник не найден проверьте данные....';
+//         textArea.innerHTML = noData;
+//         setInterval(reload,  3000);
+//     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-console.log('Результат такой. Проверь что сможешь улучшить')
+// }
