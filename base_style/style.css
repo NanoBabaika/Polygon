@@ -137,3 +137,49 @@ body {
     background: rgb(219, 146, 36);
     transition: .5s;
 }
+
+/* Стили для тудушки */
+.todo__container {
+    margin-top: 80px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    padding: 20px;
+}
+
+
+.wrapper__head {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.head__title {
+    margin-right: 30px;
+}
+
+.task__list {
+    list-style: none;
+    height: 200px;
+    width: 280px;
+    padding-left: 0;
+    border: 2px solid black;
+}
+
+.list__item {
+    margin-top: 10px;
+    text-align: center;
+    height: 25px;
+}
+
+
+.wrapper_bot {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.task_delBtn {
+    cursor: pointer;
+}

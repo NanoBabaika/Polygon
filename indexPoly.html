@@ -9,19 +9,23 @@
 </head>
 <body>
     <!-- Добавить в этот элемент вложения через JS -->
-        <div id="h_container" class="container">
-            <div class="head__title">Список Задач</div>
-            <input value="" id="taskText" type="text">
-            <button id="add" class="add__button" >Добавить элемент</button>
-            <ul id="list" class="task__list">
+        <div id="h_container" class="todo__container">
+            <div class="wrapper__head">
+                <div class="head__title">Список Задач</div>
+                <input value="" id="taskText" placeholder="Введите текст задачи" type="text">
+             </div>
+                <button id="add" class="add__button" >Добавить элемент</button>
 
-            </ul>
-        </div>
+                 <ul id="list" class="task__list">
+
+                </ul> 
+
+                <div class="btns">
+                 </div>
+         </div>
    
         <!-- тестовые элементы  -->
-        <div id="domtest" class="domtest__container">
-            <button id="btn_dom" class="domtest__btn" >Нажми</button>
-        </div>
+
 
         <div class="counter__container">
             <div id="count" class="count" >0</div>
@@ -46,11 +50,18 @@
                 <button id="close" class="close__btn" >Закрыть фото с милым котиком </button>
             </div> 
         </div>
-    <script src="./poly_src/index.js" ></script>
-    <script src="./poly_src//poligonMath.js" ></script>
+
+        <div id="test_container" class="test__container">
+
+        </div>
+    <!-- <script src="./poly_src/index.js" ></script> -->
     <script src="./poly_src//DOM.js" ></script>
     <script src="./poly_src//count.js" ></script>
     <script src="./poly_src//modal.js" ></script>
-    <script src="./poly_src//classes.js" ></script>
+    <!-- <script src="./poly_src//classesObjects.js" ></script> -->
+    <script src="./poly_src//workWithLocalstorage.js" ></script>
+    <!-- <script src="./poly_src//test.js" ></script> -->
+    
+    
 </body>
 </html>
