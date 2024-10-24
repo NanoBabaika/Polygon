@@ -1,0 +1,1 @@
+let nameValue = document.getElementById('form_name');

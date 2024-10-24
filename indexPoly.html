@@ -51,11 +51,27 @@
             </div> 
         </div>
 
-        <div id="test_container" class="test__container">
+        <div id="form" class="form__container">
+            <div class="form__title">Заказать обратный звонок</div>
 
+            <div class="form__wrappper">
+                <form action="post" class="modal-form">
+                    <div class="form__block form__block-top">
+                        <label id="form_name" class="form_title form_title--name" for="name">Имя</label>
+                        <input class="form__input" type="text" name="name" placeholder="   Например Алина" id="name"><br></br>
+                    </div>
+                    
+                    <div class="form__block form__block-bot">
+                        <label class="form_title" for="phone">Телефон</label>
+                        <input class="form__input" type="tel" name="phone" placeholder="   +7 (__) ___-__-__" id="phone">    
+                    </div>
+                    
+                     <input id="submit_from_modal" class="form__btn-submit" type="submit" name="submit" value="Записаться">
+                </form>
+            </div>
         </div>
     <!-- <script src="./poly_src/index.js" ></script> -->
-    <script src="./poly_src//DOM.js" ></script>
+    <!-- <script src="./poly_src//DOM.js" ></script> -->
     <script src="./poly_src//count.js" ></script>
     <script src="./poly_src//modal.js" ></script>
     <!-- <script src="./poly_src//classesObjects.js" ></script> -->

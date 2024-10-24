@@ -183,3 +183,41 @@ body {
 .task_delBtn {
     cursor: pointer;
 }
+
+/* styles from form  */
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.form__wrappper {
+    margin-top: 10px;
+    border: 2px solid black;
+    padding: 20px;   
+    margin-bottom: 80px;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.form__btn-submit {
+    margin-top: 20px;
+    height: 30px;
+    width: 130px;
+    cursor: pointer;
+}
+
+.form_title {
+    margin-right: 15px;
+}
+
+.form_title--name {
+    margin-right: 40px;
+}

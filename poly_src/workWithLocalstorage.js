@@ -3,7 +3,6 @@ const delBtn = document.getElementById('rem');
 const list = document.getElementById('list');
  
 
-// Научить приложение хранить данные !!!!
 let tasks = [];
 
 if (localStorage.getItem('tasks')) {
@@ -27,10 +26,10 @@ additionBtn.onclick = function() {
         }
 
         tasks.push(newTask);
-        console.log(tasks);
         saveTask ();
         rederTask(newTask);
     }
+    document.getElementById('taskText').value = "";
 }; 
 
 
@@ -60,7 +59,7 @@ list.onclick = function(event) {
     if (!btn) {
       return;
     } else {
-         const id = Number(parentNode.id);
+        const id = Number(parentNode.id);
         tasks = tasks.filter((task) => task.id !==id);
         saveTask ();
         parentNode.remove();
@@ -68,8 +67,3 @@ list.onclick = function(event) {
 }
 
 
-// function hightField () {
-//     if (tasks.length === 4 ) {
-//         list.style = height
-//     }
-// }
