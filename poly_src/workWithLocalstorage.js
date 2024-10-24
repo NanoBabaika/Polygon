@@ -20,26 +20,32 @@ additionBtn.onclick = function() {
         console.log('пустое значение');
         return false;
     } else {
-        tasks.push(inputValue);
+        // реструктуризация задачи
+        const newTask = {
+            id: Date.now(),
+            text: inputValue,
+        }
+
+        tasks.push(newTask);
         console.log(tasks);
         saveTask ();
-        rederTask();
+        rederTask(newTask);
     }
 }; 
 
 
 
-function rederTask() {
-    for(let task of tasks) {
-        let newTaskInfo = `<li
-                                class="list__item":> ${tasks} 
-                                <button class="task_delBtn" >Удалить</button>    
+function rederTask(task) {
+        let newTaskContent = `<li
+                                 id="${task.id}"
+                                 class="list__item":> ${task.text} 
+                                 <button class="task_delBtn" >Удалить</button>    
                             <li/>`;
-        let SavedItem = list.insertAdjacentHTML('beforeend', newTaskInfo); 
-        return SavedItem;
+        list.insertAdjacentHTML('beforeend', newTaskContent); 
+        return newTaskContent;
 
     }     
-}
+
 
 function saveTask () {
     localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -47,11 +53,17 @@ function saveTask () {
 
  
 
-// list.onclick = function(e) {
-//     const btn = e.target.closest('.task_delBtn');
-//     if (!btn) {
-//       return;
-//     }    
-//     btn.parentElement.remove();
-// }
+list.onclick = function(event) {
+    const btn = event.target.closest('.task_delBtn');
+    const parentNode = event.target.closest('.list__item');
+    
+    if (!btn) {
+      return;
+    } else {
+         const id = Number(parentNode.id);
+        tasks = tasks.filter((task) => task.id !==id);
+        saveTask ();
+        parentNode.remove();
+    }
+}
 
